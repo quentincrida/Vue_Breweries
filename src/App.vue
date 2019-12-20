@@ -10,7 +10,20 @@
 
 export default {
   name: 'app',
-  
+  data() {
+    return {
+      breweries: [],
+      selectedBrewery: null
+    };
+
+  },
+
+  mounted() {
+    fetch("https://api.openbrewerydb.org/breweries")
+    .then(response => response.json())
+    .then(breweries => this.breweries = breweries)
+  }
+
 }
 </script>
 
