@@ -1,7 +1,7 @@
 <template>
   <div id="app">
 <h1>Breweries</h1>
-  <div> class="main-container"
+  <div class="main-container">
   </div>
   </div>
 </template>
@@ -10,9 +10,7 @@
 
 export default {
   name: 'app',
-  components: {
-    HelloWorld
-  }
+  
 }
 </script>
 
