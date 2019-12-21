@@ -1,12 +1,17 @@
 <template>
   <div id="app">
-<h1>Breweries</h1>
+<h1>USA Breweries</h1>
   <div class="main-container">
+    <ul>
+      <li v-for="brewery in breweries">{{breweries}}</li>
+    </ul>
   </div>
   </div>
 </template>
 
 <script>
+import BreweriesList from './components/BreweriesList.vue';
+import { eventBus } from './main.js'
 
 export default {
   name: 'app',
@@ -22,6 +27,9 @@ export default {
     fetch("https://api.openbrewerydb.org/breweries")
     .then(response => response.json())
     .then(breweries => this.breweries = breweries)
+  },
+  components: {
+    "breweries-list": BreweriesList
   }
 
 }
