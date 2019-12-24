@@ -1,11 +1,14 @@
 <template>
   <div id="app">
-<h1>USA Breweries</h1>
+<h1>USA Micro Breweries</h1>
   <div class="main-container">
-    <!-- <ul>
-      <li v-for="brewery in breweries">{{breweries}}</li>
-    </ul> -->
+    <ul>
+      <!-- <li v-for="brewery in breweries">{{breweries}}</li> -->
+
     <breweries-list :breweries='breweries'></breweries-list>
+    <brewery-detail :brewery='selectedBrewery'></brewery-detail>
+  </ul>    
+
   </div>
   </div>
 </template>
@@ -13,7 +16,7 @@
 <script>
 import BreweriesList from './components/BreweriesList.vue';
 import { eventBus } from './main.js'
-// import BreweryDetail from './components/BreweryDetail.vue'
+import BreweryDetail from './components/BreweryDetail.vue'
 
 export default {
   name: 'app',
@@ -24,15 +27,26 @@ export default {
     };
 
   },
+  computed: {
+
+  },
 
   mounted() {
     fetch("https://api.openbrewerydb.org/breweries")
     .then(response => response.json())
     .then(breweries => this.breweries = breweries)
+    // console.log(breweries);
+
+
+    // eventBus.$on('brewery-selected', brewery =>
+    //   (this.selectedBrewery = brewery));
+    //   // console.log('within $on', brewery);
+
   },
+
   components: {
     "breweries-list": BreweriesList,
-    // "brewery-detail": BreweryDetail
+    "brewery-detail": BreweryDetail
   }
 
 }
@@ -43,7 +57,7 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  text-align: left;
   color: #2c3e50;
   margin-top: 60px;
 }

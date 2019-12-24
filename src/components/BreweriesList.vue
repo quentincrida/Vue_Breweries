@@ -1,7 +1,7 @@
 <template lang="html">
   <div>
     <ul>
-      <list-item v-for="(brewery, index) in breweries" :brewery="brewery" key="index"></list-item>
+      <list-item v-for="(brewery, index) in breweries" :brewery="brewery" :key="index"></list-item>
     </ul>
   </div>
 </template>
@@ -18,5 +18,10 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style>
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+}
 </style>
