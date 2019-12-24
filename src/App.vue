@@ -6,17 +6,16 @@
       <!-- <li v-for="brewery in breweries">{{breweries}}</li> -->
 
     <breweries-list :breweries='breweries'></breweries-list>
-    <brewery-detail :brewery='selectedBrewery'></brewery-detail>
-  </ul>    
+  </ul>
 
   </div>
   </div>
 </template>
 
 <script>
-import BreweriesList from './components/BreweriesList.vue';
 import { eventBus } from './main.js'
-import BreweryDetail from './components/BreweryDetail.vue'
+import BreweriesList from './components/BreweriesList.vue';
+
 
 export default {
   name: 'app',
@@ -35,18 +34,16 @@ export default {
     fetch("https://api.openbrewerydb.org/breweries")
     .then(response => response.json())
     .then(breweries => this.breweries = breweries)
-    // console.log(breweries);
 
 
-    // eventBus.$on('brewery-selected', brewery =>
-    //   (this.selectedBrewery = brewery));
-    //   // console.log('within $on', brewery);
-
-  },
+    eventBus.$on('selected-brewery', (brewery) =>
+    {
+      this.selectedBrewery = brewery
+  })
+},
 
   components: {
     "breweries-list": BreweriesList,
-    "brewery-detail": BreweryDetail
   }
 
 }

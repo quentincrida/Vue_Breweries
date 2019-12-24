@@ -2,6 +2,7 @@
   <div>
     <ul>
       <list-item v-for="(brewery, index) in breweries" :brewery="brewery" :key="index"></list-item>
+
     </ul>
   </div>
 </template>
