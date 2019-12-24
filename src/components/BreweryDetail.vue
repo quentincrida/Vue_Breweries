@@ -1,9 +1,9 @@
 <template lang="html">
-  <div v-else-if='brewery'>
-    <h3>Brewery Name: </h3>
-    <p>Brewery Type: </p>
-    <p>City: </p>
-    <p>State: </p>
+  <div v-if='brewery'>
+    <h3>{{brewery.name}}</h3>
+    <p>Brewery Type: {{brewery.brewery_type}}</p>
+    <p>City: {{brewery.city}}</p>
+    <p>State: {{brewery.state}}</p>
 </div>
 </template>
 

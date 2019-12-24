@@ -32,8 +32,9 @@ export default {
     .then(breweries => this.breweries = breweries)
 
 
-    eventBus.$on('selected-brewery', (brewery) =>
+    eventBus.$on('brewery-selected', (brewery) =>
     {
+      console.log('within $on', brewery);
       this.selectedBrewery = brewery
   })
 },
