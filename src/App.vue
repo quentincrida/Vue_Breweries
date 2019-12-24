@@ -1,20 +1,18 @@
 <template>
   <div id="app">
-<h1>USA Micro Breweries</h1>
-  <div class="main-container">
-    <ul>
-      <!-- <li v-for="brewery in breweries">{{breweries}}</li> -->
+    <h1>USA Breweries</h1>
+      <div class="main-container">
+        <breweries-list :breweries='breweries'></breweries-list>
+        <brewery-detail :brewery='selectedBrewery'></brewery-detail>
 
-    <breweries-list :breweries='breweries'></breweries-list>
-  </ul>
-
-  </div>
+      </div>
   </div>
 </template>
 
 <script>
 import { eventBus } from './main.js'
 import BreweriesList from './components/BreweriesList.vue';
+import BreweryDetail from './components/BreweryDetail.vue';
 
 
 export default {
@@ -26,9 +24,7 @@ export default {
     };
 
   },
-  computed: {
 
-  },
 
   mounted() {
     fetch("https://api.openbrewerydb.org/breweries")
@@ -44,6 +40,7 @@ export default {
 
   components: {
     "breweries-list": BreweriesList,
+    "brewery-detail": BreweryDetail
   }
 
 }
