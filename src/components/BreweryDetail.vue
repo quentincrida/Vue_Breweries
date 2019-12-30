@@ -4,6 +4,7 @@
     <p>Brewery Type: {{brewery.brewery_type}}</p>
     <p>City: {{brewery.city}}</p>
     <p>State: {{brewery.state}}</p>
+    <p>Website: {{brewery.website_url}}</p>
 </div>
 </template>
 
