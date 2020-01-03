@@ -3,11 +3,7 @@
     <ul>
       <list-item v-for="(brewery, index) in breweries" :brewery="brewery" :key="index"></list-item>
     </ul>
-    <!-- <div id="string">
-      <ul>
-        <li v-for="brewery in sortBreweries(breweries)">{{ breweries.name }}</li>
-      </ul>
-    </div> -->
+
   </div>
 </template>
 
@@ -17,10 +13,7 @@ import ListItem from './ListItem.vue';
 export default {
   name: 'breweries-list',
   props: ['breweries'],
-  // computed: {
-  //   sortedBrewery: function(){
-  //     return this.breweries.sort((a, b) => a.name - b.name );
-  //   }
+
 
 
   components: {

@@ -1,4 +1,4 @@
-# breweries
+npm # breweries
 
 ## Project setup
 ```
@@ -9,6 +9,8 @@ npm install
 ```
 npm run serve
 ```
+open in browser:
+http://localhost.8080
 
 ### Compiles and minifies for production
 ```
