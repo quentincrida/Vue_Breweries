@@ -8,6 +8,8 @@
         <brewery-detail :brewery='selectedBrewery'></brewery-detail>
 
       </div>
+      <!-- <button v-on:click="sortBreweries">Sort</button> -->
+
   </div>
 </template>
 
@@ -29,19 +31,19 @@ export default {
     };
 
   },
-  // methods: {
-  //   breweriesList.sort(function(a, b) {
-  //     var nameA = a.name.toUpperCase();
-  //     var nameB = b.name.toUpperCase();
-  //     if (nameA < nameB) {
-  //       return -1;
-  //     }
-  //     if (nameA > nameB) {
-  //       return 1;
-  //     }
-  //     return 0;
-  //   })
- // },
+  methods: {
+    sortBreweries.sort(function(a, b) {
+      var nameA = a.name.toUpperCase();
+      var nameB = b.name.toUpperCase();
+      if (nameA < nameB) {
+        return -1;
+      }
+      if (nameA > nameB) {
+        return 1;
+      }
+      return 0;
+    })
+ },
 
 
   mounted() {
