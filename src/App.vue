@@ -8,7 +8,9 @@
         <brewery-detail :brewery='selectedBrewery'></brewery-detail>
 
       </div>
-      <!-- <button v-on:click="sortBreweries">Sort</button> -->
+        <!-- <button v-on:click="sortBreweries">Sort</button> -->
+
+
 
   </div>
 </template>
@@ -31,19 +33,24 @@ export default {
     };
 
   },
-  methods: {
-    sortBreweries.sort(function(a, b) {
-      var nameA = a.name.toUpperCase();
-      var nameB = b.name.toUpperCase();
-      if (nameA < nameB) {
-        return -1;
-      }
-      if (nameA > nameB) {
-        return 1;
-      }
-      return 0;
-    })
- },
+  // methods: {
+  //   sortBreweries: function(a, b) {
+  //     this.breweries.sort;
+  //     var nameA = a.name.toUpperCase();
+  //     var nameB = b.name.toUpperCase();
+  //     if (nameA < nameB) {
+  //       return -1;
+  //     }
+  //     if (nameA > nameB) {
+  //       return 1;
+  //     }
+  //     return 0;
+  //   },
+  //   sortBreweries: function(property) {
+  //     this.breweries.sort((a, b) => {
+  //       return a[property] < b[property] ? -1 : 1;
+  //     });
+  // },
 
 
   mounted() {
@@ -57,22 +64,27 @@ export default {
       console.log('within $on', brewery);
       this.selectedBrewery = brewery
   })
-},
-
-
-
-
 }
+
+
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  /* font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: left;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 60px; */
+  background-color: orange;
 }
+.main-container {
+  display: center;
+}
+ul {
+  list-style-type: none;
+ }
 
 </style>
