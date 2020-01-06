@@ -33,19 +33,20 @@ export default {
     };
 
   },
-  // methods: {
-  //   sortBreweries: function(a, b) {
-  //     this.breweries.sort;
-  //     var nameA = a.name.toUpperCase();
-  //     var nameB = b.name.toUpperCase();
-  //     if (nameA < nameB) {
-  //       return -1;
-  //     }
-  //     if (nameA > nameB) {
-  //       return 1;
-  //     }
-  //     return 0;
-  //   },
+  methods: {
+    sortBreweries: function(a, b) {
+      this.breweries.sort;
+      var nameA = a.name.toUpperCase();
+      var nameB = b.name.toUpperCase();
+      if (nameA < nameB) {
+        return -1;
+      }
+      if (nameA > nameB) {
+        return 1;
+      }
+      return 0;
+    }
+  },
   //   sortBreweries: function(property) {
   //     this.breweries.sort((a, b) => {
   //       return a[property] < b[property] ? -1 : 1;
@@ -86,5 +87,4 @@ export default {
 ul {
   list-style-type: none;
  }
-
 </style>
